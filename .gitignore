@@ -1,0 +1,5 @@
+venv/
+.vscode/
+illuminary/illuminary/settings/secret.py
+__pycache__
+*.pyc
