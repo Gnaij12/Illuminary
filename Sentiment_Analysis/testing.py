@@ -16,6 +16,7 @@ from transformers import BertTokenizer, BertModel, AdamW, get_linear_schedule_wi
 import torch
 import torch.nn as nn
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
+use_save = False
 
 # Create a function to tokenize a set of texts
 def preprocessing_for_bert(data, tokenizer):
@@ -258,6 +259,7 @@ def train(model, train_dataloader, val_dataloader=None, epochs=4, evaluation=Fal
                 # Reset batch tracking variables
                 batch_loss, batch_counts = 0, 0
                 t0_batch = time.time()
+                torch.save(model.state_dict(), './Sentiment_Analysis/model/bert_classifier.pth')
 
         # Calculate the average loss over the entire training data
         avg_train_loss = total_loss / len(train_dataloader)
@@ -354,6 +356,8 @@ def main():
 
     set_seed(1)    # Set seed for reproducibility
     bert_classifier, optimizer, scheduler = initialize_model(epochs=20, dataset_size=len(train_dataloader))
+    if use_save:
+        bert_classifier = BertModel.from_pretrained('./Sentiment_Analysis/model/bert_classifier.pth')
     train(bert_classifier, train_dataloader, val_dataloader, epochs=20, evaluation=True,  optimizer=optimizer, scheduler=scheduler)
     val_loss, val_accuracy = evaluate(bert_classifier, val_dataloader)
     print(f"Evaluation Loss: {val_loss}, Evaluation Accuracy: {val_accuracy}")
