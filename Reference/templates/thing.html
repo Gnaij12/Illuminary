@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Define the container for your images */
+        .image-container {
+            width: 120%; /* Adjust as needed */
+            height: 500px; /* Adjust as needed */
+            left:-10%;
+            overflow: hidden;
+            position: relative;
+            background-color: #708090;
+
+            filter: blur(1px);
+            -webkit-filter: blur(1px);
+            filter: grayscale(80%);
+        }
+
+        /* Define the individual images */
+        .moving-image-sr {
+            position: absolute;
+            height: 25%;
+            left: -20%; /* Start off-screen to the left */
+            animation: slideRight var(--speed) linear infinite; /* Adjust duration and timing function */
+            border-radius: 15px;
+            filter: grayscale(60%);
+
+        }
+
+        .moving-image-sl {
+            position: absolute;
+            height: 25%;
+            right: -20%; /* Start off-screen to the right */
+            animation: slideLeft var(--speed) linear infinite; /* Adjust duration and timing function */
+            border-radius: 15px;
+            filter: grayscale(60%);
+        }
+
+        .moving-image-br {
+            position: absolute;
+            height: 45%;
+            left: -20%; /* Start off-screen to the left */
+            animation: slideRight var(--speed) linear infinite; /* Adjust duration and timing function */
+            border-radius: 15px;
+            filter: grayscale(60%);
+
+        }
+
+        .moving-image-bl {
+            position: absolute;
+            height: 45%;
+            right: -20%; /* Start off-screen to the right */
+            animation: slideLeft var(--speed) linear infinite; /* Adjust duration and timing function */
+            border-radius: 15px;
+            filter: grayscale(60%);
+        }
+
+
+
+        /* Keyframe animation to slide images from left to right */
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-1200%);
+            }
+            100% {
+                transform: translateX(1200%); /* Move the image to the right */
+            }
+        }
+
+        /* Keyframe animation to slide images from right to left */
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(1200%);
+            }
+            100% {
+                transform: translateX(-1200%); /* Move the image to the left */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <p1>hi</p1>
+    <div class="image-container">
+        <img class="moving-image-sr" style="--speed:19s;top:9%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:24s;top:24%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:20s;top:53%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:25s;top:40%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:16s;top:18%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:21s;top:59%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:26s;top:48%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:17s;top:32%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:22s;top:12%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;top:27%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:18s;top:46%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:23s;top:47%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:28s;top:21%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:15s;top:63%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:29s;top:43%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:30s;top:37%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+        <img class="moving-image-sl" style="--speed:15s;top:3%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:30s;top:27%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:29s;top:54%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:16s;top:45%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:28s;top:13%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:17s;top:50%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:27s;top:55%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:18s;top:35%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:26s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:19s;top:24%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:25s;top:38%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:20s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:24s;top:29%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:21s;top:53%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:23s;top:41%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:22s;top:42%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+        <img class="moving-image-sl" style="--speed:22s;top:5%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:23s;top:10%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:21s;top:14%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:24s;top:25%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:20s;top:32%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:25s;top:67%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:19s;top:78%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:26s;top:35%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:18s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;top:69%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:17s;top:53%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:28s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:16s;top:72%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:29s;top:65%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:15s;top:53%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:30s;top:47%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+        <img class="moving-image-sl" style="--speed:15s;top:5%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:30s;top:3%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:29s;top:4%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:16s;top:6%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:28s;top:3%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:17s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;top:19%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:18s;top:23%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:26s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:19s;top:52%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:25s;top:71%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:21s;top:43%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:19s;top:37%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+
+        <img class="moving-image-sr" style="--speed:19s;animation-delay:10s;top:9%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:24s;animation-delay:10s;top:24%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:20s;animation-delay:10s;top:53%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:25s;animation-delay:10s;top:40%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:16s;animation-delay:10s;top:18%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:21s;animation-delay:10s;top:59%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:26s;animation-delay:10s;top:48%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:17s;animation-delay:10s;top:32%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:22s;animation-delay:10s;top:12%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;animation-delay:10s;top:27%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:18s;animation-delay:10s;top:46%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:23s;animation-delay:10s;top:47%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:28s;animation-delay:10s;top:21%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:15s;animation-delay:10s;top:63%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:29s;animation-delay:10s;top:43%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:30s;animation-delay:10s;top:37%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+        <img class="moving-image-sl" style="--speed:15s;animation-delay:10s;top:3%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:30s;animation-delay:10s;top:27%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:29s;animation-delay:10s;top:54%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:16s;animation-delay:10s;top:45%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:28s;animation-delay:10s;top:13%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:17s;animation-delay:10s;top:50%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:27s;animation-delay:10s;top:55%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:18s;animation-delay:10s;top:35%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:26s;animation-delay:10s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:19s;animation-delay:10s;top:24%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:25s;animation-delay:10s;top:38%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:20s;animation-delay:10s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:24s;animation-delay:10s;top:29%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:21s;animation-delay:10s;top:53%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:23s;animation-delay:10s;top:41%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:22s;animation-delay:10s;top:42%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+        <img class="moving-image-sl" style="--speed:22s;animation-delay:10s;top:5%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:23s;animation-delay:10s;top:10%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:21s;animation-delay:10s;top:14%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:24s;animation-delay:10s;top:25%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:20s;animation-delay:10s;top:32%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:25s;animation-delay:10s;top:67%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:19s;animation-delay:10s;top:78%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:26s;animation-delay:10s;top:35%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:18s;animation-delay:10s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;animation-delay:10s;top:69%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:17s;animation-delay:10s;top:53%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:28s;animation-delay:10s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:16s;animation-delay:10s;top:72%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:29s;animation-delay:10s;top:65%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:15s;animation-delay:10s;top:53%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:30s;animation-delay:10s;top:47%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+        <img class="moving-image-sl" style="--speed:15s;animation-delay:10s;top:5%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:30s;animation-delay:10s;top:3%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:29s;animation-delay:10s;top:4%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:16s;animation-delay:10s;top:6%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:28s;animation-delay:10s;top:3%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:17s;animation-delay:10s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;animation-delay:10s;top:19%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:18s;animation-delay:10s;top:23%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:26s;animation-delay:10s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:19s;animation-delay:10s;top:52%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:25s;animation-delay:10s;top:71%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:21s;animation-delay:10s;top:43%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:19s;animation-delay:10s;top:37%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+
+
+
+        <img class="moving-image-sr" style="--speed:19s;animation-delay:22s;top:9%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:24s;animation-delay:22s;top:24%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:20s;animation-delay:22s;top:53%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:25s;animation-delay:22s;top:40%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:16s;animation-delay:22s;top:18%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:21s;animation-delay:22s;top:59%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:26s;animation-delay:22s;top:48%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:17s;animation-delay:22s;top:32%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:22s;animation-delay:22s;top:12%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;animation-delay:22s;top:27%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:18s;animation-delay:22s;top:46%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:23s;animation-delay:22s;top:47%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:28s;animation-delay:22s;top:21%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:15s;animation-delay:22s;top:63%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:29s;animation-delay:22s;top:43%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:30s;animation-delay:22s;top:37%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1"20>20
+
+        <img class="moving-image-sl" style="--speed:15s;animation-delay:22s;top:3%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:30s;animation-delay:22s;top:27%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:29s;animation-delay:22s;top:54%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:16s;animation-delay:22s;top:45%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:28s;animation-delay:22s;top:13%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:17s;animation-delay:22s;top:50%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:27s;animation-delay:22s;top:55%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:18s;animation-delay:22s;top:35%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:26s;animation-delay:22s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:19s;animation-delay:22s;top:24%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:25s;animation-delay:22s;top:38%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:20s;animation-delay:22s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:24s;animation-delay:22s;top:29%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:21s;animation-delay:22s;top:53%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:23s;animation-delay:22s;top:41%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:22s;animation-delay:22s;top:42%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1"20>20
+
+        <img class="moving-image-sl" style="--speed:22s;animation-delay:22;top:5%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:23s;animation-delay:22s;top:10%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:21s;animation-delay:22s;top:14%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:24s;animation-delay:22s;top:25%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:20s;animation-delay:22s;top:32%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:25s;animation-delay:22s;top:67%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:19s;animation-delay:22s;top:78%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:26s;animation-delay:22s;top:35%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:18s;animation-delay:22s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;animation-delay:22s;top:69%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:17s;animation-delay:22s;top:53%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:28s;animation-delay:22s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:16s;animation-delay:22s;top:72%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:29s;animation-delay:22s;top:65%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:15s;animation-delay:22s;top:53%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:30s;animation-delay:22s;top:47%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1"20>20
+
+        <img class="moving-image-sl" style="--speed:15s;animation-delay:22s;top:5%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:30s;animation-delay:22s;top:3%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:29s;animation-delay:22s;top:4%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sr" style="--speed:16s;animation-delay:22s;top:6%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:28s;animation-delay:22s;top:3%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:17s;animation-delay:22s;top:16%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:27s;animation-delay:22s;top:19%;" src= "{{url_for('static', filename='img/img3.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:18s;animation-delay:22s;top:23%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-br" style="--speed:26s;animation-delay:22s;top:41%;" src= "{{url_for('static', filename='img/img2.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:19s;animation-delay:22s;top:52%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-sl" style="--speed:25s;animation-delay:22s;top:71%;" src= "{{url_for('static', filename='img/img4.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:21s;animation-delay:22s;top:43%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+        <img class="moving-image-bl" style="--speed:19s;animation-delay:22s;top:37%;" src= "{{url_for('static', filename='img/img5.jpg')}}" alt="Image 1">
+    </di20v>
+</body>
+</html>

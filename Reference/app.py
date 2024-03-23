@@ -11,11 +11,12 @@ def get_db_connection():
 
 @app.route('/')
 def index():
-    conn = get_db_connection()
-    data = conn.execute('SELECT * FROM characters').fetchall()
-    conn.close()
+    return render_template('thing.html')
+    # conn = get_db_connection()
+    # data = conn.execute('SELECT * FROM characters').fetchall()
+    # conn.close()
     
-    return render_template('characters.html', characters=data)
+    # return render_template('characters.html', characters=data)
 
 @app.route('/characters/<name>')
 def character(name):
