@@ -65,7 +65,7 @@ def webscrape_facebook_friends(url: str) -> list[str]:
 
     driver.get(friends_url)
 
-    for _ in range(10):
+    for _ in range(2):
         driver.execute_script(SCROLL_SCRIPT)
         time.sleep(0.5)
 

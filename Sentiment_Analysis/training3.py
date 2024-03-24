@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 from textblob import Word
 # from nltk.tokenize import word_tokenize
 import string
+import numpy as np
 
 # from sklearn.tree import DecisionTreeRegressor
 # from sklearn.ensemble import RandomForestRegressor
@@ -82,9 +83,14 @@ def make_model():
     # print(df4["polarity"])
     # print(df4["severity_int"])
     # df4["Sentiment"] =  np.where(df4["polarity"] >= 0 , "Positive", "Negative")
-    df4["10Polarity"] = (1 - (df4["polarity"].round(1) + 10)/20) * (10 - 1) + 1
+    same_number = np.full(df4.shape[0], 0.8929, dtype=float)
+    df4["10Polarity"] = (3.05 * np.float_power(same_number, (10 * df4["polarity"].round(1))) ).round(0) 
     print(df4["10Polarity"])
+    print(df4["polarity"])
+    # (((1 - (df4["polarity"].round(1)*10 + 10)/20) * (10 - 1) + 1).round(0)
+    # print(df4["10Polarity"])
     df4["roundedPolarity"] = df4['polarity'].round(1)
+    # print(df4["polarity"])
 
     # print(df4["polarity"])
     # print(df4["10polarity"])
@@ -100,13 +106,15 @@ def make_model():
     # print(y)
 
     X_train, X_test, y_train, y_test = train_test_split(df4['post_text'], df4['10Polarity'], test_size=0.2, random_state=2)
+    # print(X_train)
 
     # Convert the text data into numerical features using a CountVectorizer
     vectorizer = CountVectorizer()
     X_train = vectorizer.fit_transform(X_train)
     X_test = vectorizer.transform(X_test)
-    with open("./Sentiment_Analysis/models/count_vectorizer.pkl", "wb+") as f:
-        pickle.dump(vectorizer, f)
+    # print(y_test)
+    # with open("./Sentiment_Analysis/models/count_vectorizer2.pkl", "wb+") as f:
+    #     pickle.dump(vectorizer, f)
 
     # print(X_train)
     # print(X_test)
@@ -131,6 +139,8 @@ def make_model():
     # regr = KNeighborsClassifier()
     # regr = MultinomialNB()
     regr.fit(X_train, y_train)
+    # print(regr.predict(X_test))
+    # print(y_test)
 
     # Evaluate the classifier on the testing set
     accuracy = regr.score(X_test, y_test)
@@ -139,8 +149,8 @@ def make_model():
     import joblib
 
     # Save the model to a file
-    model_filename = "./Sentiment_Analysis/models/model.pkl"
-    joblib.dump(regr, model_filename)
+    # model_filename = "./Sentiment_Analysis/models/model2.pkl"
+    # joblib.dump(regr, model_filename)
 
     # Create a classification report
     # print(classification_report(y_test, regr.predict(X_test)))

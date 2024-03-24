@@ -441,9 +441,9 @@
         
 
         <div class = "popup">
-            <form action="/submit">
-                <label for="fname" class="label">Profile URL</label><br>
-                <input type="text" class="textthing" id="url" name="url" placeholder=""><br>
+            <form action="/submit" method="post" enctype="multipart/form-data">
+                <label for="url" class="label">Profile URL</label><br>
+                <input  style="font-size:12px; height:50px" type="text" class="textthing" name="url" placeholder=""><br>
                 <p3>PLEASE include https</p3>
                 <input type="submit" class = "button" value="Submit">
               </form>
