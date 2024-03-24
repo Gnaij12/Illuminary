@@ -11,10 +11,7 @@
             top:20%;
             overflow: hidden;
             position: relative;
-            background-color: #303641;
-
-            
-            filter: grayscale(100%) brightness(120%);
+            background-color: #606060;
         }
 
         /* Define the individual images */
@@ -24,9 +21,9 @@
             left: -50%; /* Start off-screen to the left */
             animation: slideRight var(--speed) linear infinite; /* Adjust duration and timing function */
             border-radius: 15px;
-            animation-delay: -1s;
+            animation-delay: -7s;
             
-            filter: grayscale(100%) brightness(125%) blur(3px);
+            filter: grayscale(100%) brightness(150%) blur(3px);
 
         }
 
@@ -36,9 +33,9 @@
             right: -50%; /* Start off-screen to the right */
             animation: slideLeft var(--speed) linear infinite; /* Adjust duration and timing function */
             border-radius: 15px;
-            animation-delay: -1s;
+            animation-delay: -7s;
             
-            filter: grayscale(100%) brightness(125%) blur(3px);
+            filter: grayscale(100%) brightness(150%) blur(3px);
         }
 
         .moving-image-br {
@@ -47,9 +44,9 @@
             left: -50%; /* Start off-screen to the left */
             animation: slideRight var(--speed) linear infinite; /* Adjust duration and timing function */
             border-radius: 15px;
-            animation-delay: -1s;
+            animation-delay: -7s;
            
-            filter: grayscale(100%) brightness(125%) blur(3px);
+            filter: grayscale(100%) brightness(150%) blur(3px);
 
         }
 
@@ -59,9 +56,9 @@
             right: -50%; /* Start off-screen to the right */
             animation: slideLeft var(--speed) linear infinite; /* Adjust duration and timing function */
             border-radius: 15px;
-            animation-delay: -1s;
+            animation-delay: -7s;
             
-            filter: grayscale(100%) brightness(125%) blur(3px);
+            filter: grayscale(100%) brightness(150%) blur(3px);
         }
 
 
@@ -103,6 +100,31 @@
             margin: auto;
         }
 
+        .popup {
+            opacity: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2.5%;
+            width: 20%;
+            height: 80%;
+            background-color: #111628;
+            animation: fadeInAnimation ease 1s;
+            animation-delay: 3.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            z-index: 5;
+            border-radius: 20px;
+            filter: brightness(5/6);
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
 
     </style>
 </head>
@@ -112,6 +134,8 @@
     </div>
     <div class="lining"></div>
     <div class="image-container">
+
+
         <img class="moving-image-sr" style="--speed:19s;top:9%;" src= "{{url_for('static', filename='img/fimgs1.jpg')}}" alt="Image 1">
         <img class="moving-image-sl" style="--speed:24s;top:24%;" src= "{{url_for('static', filename='img/fimgs2.jpg')}}" alt="Image 1">
         <img class="moving-image-bl" style="--speed:20s;top:53%;" src= "{{url_for('static', filename='img/fimgb1.jpg')}}" alt="Image 1">
@@ -335,7 +359,12 @@
         <img class="moving-image-sl" style="--speed:25s;animation-delay:22s;top:75%;" src= "{{url_for('static', filename='img/fimgs4.jpg')}}" alt="Image 1">
         <img class="moving-image-bl" style="--speed:21s;animation-delay:22s;top:-37%;" src= "{{url_for('static', filename='img/fimgb3.jpg')}}" alt="Image 1">
         <img class="moving-image-bl" style="--speed:19s;animation-delay:22s;top:90%;" src= "{{url_for('static', filename='img/fimgb1.jpg')}}" alt="Image 1">
+        
+
+        <div class = "popup"></div>
     </div>
+
+
 
     <div class="lining"></div>
 
