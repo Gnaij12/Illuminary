@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+        
         /* Define the container for your images */
         .image-container {
             width: 100%; /* Adjust as needed */
@@ -93,6 +97,16 @@
             padding-bottom: 20px;
         }
 
+        .direct {
+            width: 100%; /* Adjust as needed */
+            position: inherit;
+            height: 100%;
+            background-color: #303641;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
         .lining {
             width: 100%; /* Adjust as needed */
             height: 20px;
@@ -106,8 +120,8 @@
             margin-right: auto;
             margin-top: 2.5%;
             width: 20%;
-            height: 80%;
-            background-color: #111628;
+            height: 60%;
+            background-color: #303641;
             animation: fadeInAnimation ease 1s;
             animation-delay: 3.5s;
             animation-iteration-count: 1;
@@ -115,6 +129,12 @@
             z-index: 5;
             border-radius: 20px;
             filter: brightness(5/6);
+            color: aliceblue;
+            text-align: center;
+            font-size: 300%;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: bolder;
+            padding: 2%;
         }
         @keyframes fadeInAnimation {
             0% {
@@ -123,6 +143,65 @@
             100% {
                 opacity: 1;
             }
+        }
+
+        label{
+            margin-top: 20%;
+        }
+
+        input
+        {
+            font-size: 80%;
+            margin-top: 15%;
+            margin-bottom: 15%;
+        }
+        .textthing{
+            font-size: 80%;
+            border-radius: 10px;
+            width: 90%;
+            border: none;
+            margin: 5%;
+        }
+        .button{
+            padding: 10px 20px;
+            margin-top: 5%;
+            font-size: 33px;
+            color: white;
+            background-color: blue; /* Button color */
+            border: none;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            z-index: 1;
+            
+            /* Gradient border */
+            background-image: linear-gradient(to right, #fea84e , #fc6c6d);
+            background-clip: padding-box; /* Only applies background to padding area */
+            
+            /* Creating space for the gradient border */
+            border: 2px solid transparent; /* Border size controls the "thickness" of your gradient border */
+            
+            /* Optional: rounded corners */
+            border-radius: 8px;
+            
+            /* Smooth font on all browsers */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .button:hover {
+            background-color: darkblue;
+        }
+
+        p3
+        {
+            font-size: 50%;
+        }
+
+        .label
+        {
+            margin-bottom: 10%;
+            padding:10px;
         }
 
 
@@ -361,12 +440,23 @@
         <img class="moving-image-bl" style="--speed:19s;animation-delay:22s;top:90%;" src= "{{url_for('static', filename='img/fimgb1.jpg')}}" alt="Image 1">
         
 
-        <div class = "popup"></div>
+        <div class = "popup">
+            <form action="/submit">
+                <label for="fname" class="label">Profile URL</label><br>
+                <input type="text" class="textthing" id="url" name="url" placeholder=""><br>
+                <p3>PLEASE include https</p3>
+                <input type="submit" class = "button" value="Submit">
+              </form>
+        </div>
     </div>
 
 
 
     <div class="lining"></div>
+
+    <div class = "direct" >
+        <h1>Hi</h1>
+    </div>
 
 </body>
 </html>

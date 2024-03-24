@@ -7,8 +7,40 @@
             window.location.href = "{{ url_for('/resources') }}";
         }, 3000); // 3000 milliseconds (3 seconds)
     </script>
+    <style>
+        .logo {
+            width: 100%; /* Adjust as needed */
+            position: inherit;
+            height: 20%;
+            background-color: #111628;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .direct {
+            width: 100%; /* Adjust as needed */
+            position: inherit;
+            height: 100%;
+            background-color: #303641;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .lining {
+            width: 100%; /* Adjust as needed */
+            height: 20px;
+            background-image: linear-gradient(to right, #fea84e , #fc6c6d);
+            margin: auto;
+        }
+    </style>
 </head>
-<body>
-    <p>Thank you for helping!</p>
+<body style="margin: 0px;">
+    <div class = "logo" >
+        <img src= "{{url_for('static', filename='img/Logo.jpg')}}" alt="Image 1" style="width:20%;display:block;margin-left:auto;margin-right:auto;">
+    </div>
+    <div class="lining"></div>
+    <div class="direct">
+        Hi
+    </div>
 </body>
 </html>
