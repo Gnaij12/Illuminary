@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TResources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .logo {
+            width: 100%; /* Adjust as needed */
+            position: inherit;
+            height: 20%;
+            background-color: #111628;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .direct {
+            width: 100%; /* Adjust as needed */
+            position: inherit;
+            height: 100%;
+            background-color: #303641;
+            margin: auto;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+            margin-bottom: 5%;
+            font-size: large;
+            
+        }
+        .lining {
+            width: 100%; /* Adjust as needed */
+            flex-grow : 1;
+            background-image: linear-gradient(to right, #fea84e , #fc6c6d);
+            margin: auto;
+        }
+
+        h1{
+            font-size: 400%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="margin: 0px;height: 100%;background-color: #303641;">
+    <div class = "logo" >
+        <img src= "{{url_for('static', filename='img/Logo.jpg')}}" alt="Image 1" style="width:20%;display:block;margin-left:auto;margin-right:auto;">
+    </div>
+    <div class="lining"></div>
+    <div class="direct">
+        <h1>Resources</h1>
+        <div style="margin-left: 10%;width: 80%;color: white;">
+            <h2 style="margin-bottom: 1%;">Immediate Help:</h2>
+            In life-threatening situations, call 911 or go to the nearest emergency room.<br><br>
+            <b>If you are suicidal or in emotional distress:</b><br>
+            <ul style="list-style-type:disc;">
+                <li>Use the 988 Suicide and Crisis Lifeline by calling or texting 988 or chatting online. This provides 24-hour, confidential support.</li>
+                <li>In case of a disaster, reach out to the Disaster Distress Helpline by calling or texting 1-800-985-59901.</li>
+              </ul> 
+            
+            <br>
+            If you see concerning social media messages, contact the company’s safety team. Social media companies have safety teams that can connect the person with help2.<br>
+            <h2 style="margin-bottom: 1%;">Finding a Healthcare Therapist:</h2>
+            <b>Thriveworks:</b> Offers in-person and online therapy, individual therapy, couples counseling, psychiatry, and more. They accept most insurances3.<br><br>
+            <b>Full Life Counseling:</b> Provides guidance and support for overcoming past patterns and challenges. Offices in Charlottesville and Louisa4.<br><br>
+            <b>UVA Health:</b> Dr. Stephanie Bajo specializes in psychiatry and neurobehavioral sciences5.<br><br>
+            <b>Virginia Family Therapy:</b> Offers compassionate mental health support for individuals, couples, and families6.<br><br>
+            <h2 style="margin-bottom: 2%;">Improving Mental Health Throughout the Day:</h2>
+            <b>Get Restful Sleep:</b> Prioritize quality sleep—it’s essential for mental health.<br><br>
+            <b>Cut Back on Social Media:</b> Limit screen time to reduce stress.<br><br>
+            <b>Strengthen Relationships:</b> Connect with friends and loved ones.<br><br>
+            <b>Stay Active:</b> Physical activity positively impacts mental well-being.<br><br>
+            <b>Savor Nutrient-Rich Foods:</b> A balanced diet supports energy and focus.<br><br>
+            <b>Know When to Take It Easy:</b> Practice self-compassion and rest when needed.<br><br>
+            <b>Get Some Sunshine:</b> Sunlight boosts mood and vitamin D levels.
+        </div>
+    </div>
+</body>
+</html>
